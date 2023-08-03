@@ -2,7 +2,21 @@
     "name": "hichemtab-tech/langify-laravel",
     "version": "1.0.7",
     "description": "LangifyLaravel is a powerful Laravel language generation library that automates the process of creating language files for multilingual support. With just one language file, it generates translations for multiple languages, making localization a breeze.",
-    "keywords": ["laravel", "language", "translation", "multilingual", "localization", "generator", "langifylaravel", "php"],
+    "keywords": [
+        "multilingual",
+        "php",
+        "laravel",
+        "translation",
+        "localization",
+        "php-library",
+        "laravel-framework",
+        "laravel-package",
+        "laravel-localization",
+        "laravel-php",
+        "laravel-language",
+        "laravel-lang",
+        "laravel-multi-language"
+    ],
     "require": {
         "laravel/framework": "^10.17",
         "guzzlehttp/guzzle": "^7.7"
