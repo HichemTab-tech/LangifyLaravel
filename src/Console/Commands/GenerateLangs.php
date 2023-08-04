@@ -113,7 +113,6 @@ class GenerateLangs extends Command
 
     function var_export_with_square_brackets($expression): array|string|null
     {
-        $expression = preg_replace('/^array\s\(/', '[', $expression);
-        return preg_replace('/\)$/', ']', $expression);
+        return str_replace(["array (\n", "\n)"], ["[\n", "\n];"], $expression);
     }
 }
