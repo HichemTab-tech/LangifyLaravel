@@ -98,7 +98,7 @@ class GenerateLangs extends Command
         foreach ($result as $lang => $data) {
             foreach ($data as $key => $value) {
                 $replacements = [
-                    '{{CONTENT}}' => var_export($value, true),
+                    '{{CONTENT}}' => $this->var_export_with_square_brackets(var_export($value, true)),
                 ];
                 $template = File::get(__DIR__.'/stubs/langPlaceholder.stub');
                 $generatedClass = str_replace(array_keys($replacements), array_values($replacements), $template);
@@ -109,5 +109,11 @@ class GenerateLangs extends Command
             }
         }
         $this->info("Done!");
+    }
+
+    function var_export_with_square_brackets($expression): array|string|null
+    {
+        $expression = preg_replace('/^array\s\(/', '[', $expression);
+        return preg_replace('/\)$/', ']', $expression);
     }
 }
